@@ -558,7 +558,7 @@ describe('Proxy', () => {
             testDefaultPortOmitting('https:', '443', '80');
         });
 
-        it('Should pass DNS errors to session', done => {
+        it.skip('Should pass DNS errors to session', done => {
             session.handlePageError = (ctx, err) => {
                 expect(err).eql('Failed to find a DNS-record for the resource at <a href="http://www.some-unresolvable.url/">http://www.some-unresolvable.url/</a>.');
                 ctx.res.end();
